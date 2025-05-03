@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Pokémon - Dashboard</title> 
+    <link rel="stylesheet" href="css/style.css"> 
+
+</head> 
+<body> 
+    <header> 
+        <h1>Dashboard Pokémon</h1> 
+        <button id="logoutBtn">Sair</button> 
+    </header> 
+
+    <nav> 
+        <ul> 
+            <li><a href="dashboard.html">Home</a></li> 
+            <li><a href="pokemons.html">Gerenciar Pokémons</a></li> 
+        </ul> 
+    </nav> 
+
+    <main> 
+        <h2>Bem-vindo, Treinador!</h2> 
+        <div id="userList" class="card"> 
+            <h3>Usuários Cadastrados</h3> 
+            <ul id="users"></ul> 
+        </div> 
+    </main> 
+
+    <script type="module" src="js/api.js"></script> 
+    <script type="module" src="js/auth.js"></script> 
+</body> 
+</html> 
