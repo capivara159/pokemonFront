@@ -8,8 +8,8 @@ document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
     const password = document.getElementById('password').value;
 
     try {
-        const { token } = await authService.login({ email, password });
-        tokenManager.set(token);
+        const data = await authService.login({ email, password });
+        tokenManager.set(data.token);
         window.location.href = 'dashboard.html';
     } catch (error) {
         showAlert('error', 'Login falhou: ' + error.message);
@@ -24,8 +24,8 @@ document.getElementById('registerForm')?.addEventListener('submit', async (e) =>
     const password = document.getElementById('password').value;
 
     try {
-        const { token } = await authService.register({ email, password });
-        tokenManager.set(token);
+        const data = await authService.register({ email, password });
+        tokenManager.set(data.token);
         showAlert('success', 'Registro realizado! Redirecionando...');
         setTimeout(() => window.location.href = 'dashboard.html', 1500);
     } catch (error) {

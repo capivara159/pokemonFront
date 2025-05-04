@@ -1,7 +1,4 @@
-//const API_BASE_URL = 'http://localhost:5199/api';
-
-// Substitua pela URL do seu backend (ex: https://pokemon-api.onrender.com)
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://seu-backend.vercel.app/api'; 
+const API_BASE_URL = 'https://pokemonapi-freeapp.azurewebsites.net/api';
 
 // Utilitários de Token
 export const tokenManager = {
@@ -43,14 +40,14 @@ export async function fetchAPI(endpoint, method = 'GET', body = null, requiresAu
 
 // Serviços específicos
 export const authService = {
-    login: (credentials) => fetchAPI('/auth/login', 'POST', credentials, false),
-    register: (userData) => fetchAPI('/auth/register', 'POST', userData, false)
+    login: (credentials) => fetchAPI('/Auth/login', 'POST', credentials, false),
+    register: (userData) => fetchAPI('/Auth/register', 'POST', userData, false)
 };
 
 export const pokemonService = {
-    getAll: () => fetchAPI('/pokemons'),
-    getById: (id) => fetchAPI(`/pokemons/${id}`),
-    create: (pokemon) => fetchAPI('/pokemons', 'POST', pokemon),
-    update: (id, pokemon) => fetchAPI(`/pokemons/${id}`, 'PUT', pokemon),
-    delete: (id) => fetchAPI(`/pokemons/${id}`, 'DELETE')
+    getAll: () => fetchAPI('/Pokemons'),
+    getById: (id) => fetchAPI(`/Pokemons/${id}`),
+    create: (pokemon) => fetchAPI('/Pokemons', 'POST', pokemon),
+    update: (id, pokemon) => fetchAPI(`/Pokemons/${id}`, 'PUT', pokemon),
+    delete: (id) => fetchAPI(`/Pokemons/${id}`, 'DELETE')
 };
